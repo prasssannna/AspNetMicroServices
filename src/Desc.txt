@@ -67,3 +67,18 @@ db.Products.remove({})
 show databases
 show collections
 db.Products.find({}).pretty()
+
+Repository pattern is used for catalogs
+An abstractin Between DB and business is created which help to mock data for testing
+
+API -> Business Obj --> Repository --> Database
+
+Here repository could be Mock or db repo
+
+1. Install mongo db driver
+2. Create repository for a particular collection
+3. Add CRUD ops
+4. Create a context and use it in contoller
+5. Inject all these repo and context
+
+So -> Controller -> CatalogContext --> Product repository
