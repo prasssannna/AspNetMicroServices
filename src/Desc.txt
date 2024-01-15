@@ -1,1 +1,69 @@
 create an ASP net MicroServices
+For Mongo
+docker ps
+	CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+	
+docker pull mongo
+	Using default tag: latest
+	latest: Pulling from library/mongo
+	Digest: sha256:3f765972fa2d1d0a748762ba43930f06f0c3ea58986582dd4663fe5ad7b63f0e
+	Status: Image is up to date for mongo:latest
+	docker.io/library/mongo:latest
+
+docker run -d -p 27017:27017 --name shopping-mongo mongo
+	b6e4767769fdc458b8ea6b059fcb0c0d046a3d43c1b08e93958794253bcb5e77
+docker ps
+	CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                      NAMES
+	b6e4767769fd   mongo     "docker-entrypoint.s…"   15 seconds ago   Up 11 seconds   0.0.0.0:27017->27017/tcp   shopping-mongo
+
+	To run mongo commands
+	 docker exec -it  shopping-mongo /bin/bash
+
+
+1
+-- Now we can open interactive terminal for mongo
+
+docker exec -it shopping-mongo /bin/bash
+
+
+2
+-- After that, we are able to run mongo commands. 
+Let me try with 
+
+ - create database
+ - create collection
+ - add items into collection
+ - list collection
+
+
+ls
+mongo
+show dbs
+use CatalogDb  --> for create db on mongo
+db.createCollection('Products')  --> for create people collection
+
+db.Products.insertMany([
+			    {
+			        "Name": "Asus Laptop",
+			        "Category": "Computers",
+			        "Summary": "Summary",
+			        "Description": "Description",
+			        "ImageFile": "ImageFile",
+			        "Price": 54.93
+			    },
+			    {
+			        "Name": "HP Laptop",
+			        "Category": "Computers",
+			        "Summary": "Summary",
+			        "Description": "Description",
+			        "ImageFile": "ImageFile",
+			        "Price": 88.93
+			    }
+			])
+
+db.Products.find({}).pretty()
+db.Products.remove({})
+
+show databases
+show collections
+db.Products.find({}).pretty()
