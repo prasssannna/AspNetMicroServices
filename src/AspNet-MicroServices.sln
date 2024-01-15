@@ -6,13 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969C4A73-D560-4577-8D1F-E5E73E5CABC2}"
 	ProjectSection(SolutionItems) = preProject
 		Desc.txt = Desc.txt
+		PostmanTest.txt = PostmanTest.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3875EEA0-DC3C-47EA-9B6E-4878A1FE0FD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{1F665984-96EE-453D-BD09-664AA0B62B97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{6AAD48BC-B786-423B-BE83-8D3796CA6269}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{6AAD48BC-B786-423B-BE83-8D3796CA6269}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

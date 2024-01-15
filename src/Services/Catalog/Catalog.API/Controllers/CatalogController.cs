@@ -25,7 +25,7 @@ namespace Catalog.API.Controllers
             return Ok(await productRepository.GetAllProductsAsync());
         }
 
-        [HttpGet ("id:length(24)", Name = "GetByID")]
+        [HttpGet ("{id:length(24)}", Name = "GetByID")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetById([FromRoute] string id)
@@ -42,7 +42,7 @@ namespace Catalog.API.Controllers
 
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [HttpGet("name:string", Name = "GetByName")]
+        [HttpGet("/name/{name}", Name = "GetByName")]
         public async Task<IActionResult> GetByName([FromRoute] string name)
         {
             var prod = await productRepository.GetProductByNameAsync(name);
@@ -55,7 +55,7 @@ namespace Catalog.API.Controllers
         }
 
 
-        [HttpGet("category:string", Name = "GetByCategory")]
+        [HttpGet("/category/{category}", Name = "GetByCategory")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetByCategory([FromRoute] string category)

@@ -18,8 +18,10 @@ docker ps
 
 	To run mongo commands
 	 docker exec -it  shopping-mongo /bin/bash
-
-
+ 
+	docker ps -a will give all available containers.
+	 you just have choose one and run it
+	docker start {hash}
 1
 -- Now we can open interactive terminal for mongo
 
