@@ -1,5 +1,6 @@
 create an ASP net MicroServices
-For Mongo
+
+For Mongo (MONGO RUNS IN DOCKER**************************)
 docker ps
 	CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 	
@@ -88,4 +89,29 @@ So -> Controller -> CatalogContext --> Product repository
 Create docker compose file
 1. You can select a project and create a orchestrar
 docker-compose -f .\docker-compose.yml -f.\docker-compose.override.yml up -d
+
+For REDIS
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
+Install using nugit
+
+install-package Microsoft.Extensions.Caching.StackExchangeRedis
+update-package -ProjectName Basket.API
+
+For JSON
+install newtosoft json
+
+Sample REDIS cmds
+
+ redis-cli
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> set a 12
+OK
+127.0.0.1:6379> get a
+"12"
+127.0.0.1:6379> set name pras
+OK
+127.0.0.1:6379> get name
+"pras"
+127.0.0.1:6379>
 
