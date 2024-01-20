@@ -10,12 +10,21 @@ services:
       - mongo_data:/data/db
 
   catalog.api:
-    container_name : catalog.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - DatabaseSettings__ConnectionString=mongodb://catalogdb:27017
-      - ASPNETCORE_HTTP_PORTS=8000
-    depends_on: 
-      - catalogdb
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "DatabaseSettings__ConnectionString=mongodb://catalogdb:27017"
+      - "DatabaseSettings__DatabaseName=CatalogDB"
+      - "DatabaseSettings__CollectionName=Products"
     ports:
-      - "8000:80"
+      - "8000:8080"
+    depends_on:
+      - catalogdb
+
+  basket.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8001:8080"
+

@@ -88,7 +88,7 @@ So -> Controller -> CatalogContext --> Product repository
 
 Create docker compose file
 1. You can select a project and create a orchestrar
-docker-compose -f .\docker-compose.yml -f.\docker-compose.override.yml up -d
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 For REDIS
 docker run -d -p 6379:6379 --name aspnetrun-redis redis
