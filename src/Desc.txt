@@ -115,3 +115,36 @@ OK
 "pras"
 127.0.0.1:6379>
 
+
+Build a container from shell
+docker-compose  -f "C:\Users\prass\source\repos\c#\AspNetMicroServices\src\docker-compose.yml" -f "C:\Users\prass\source\repos\c#\AspNetMicroServices\src\docker-compose.override.yml" -f "C:\Users\prass\source\repos\c#\AspNetMicroServices\src\obj\Docker\docker-compose.vs.debug.g.yml" -p dockercompose17106024734179060758 --ansi never config
+
+Now install Portainer. This is just like container mgmt studio
+http://localhost:9000/#!/2/docker/dashboard
+user name: admin
+pwd:kishManasa105
+
+
+We are now creating DISCOUNT API
+For ths we are going to use postgre sql and postgre admin to manage the database.
+Install using docker
+
+CREATE TABLE Coupon(
+		ID SERIAL PRIMARY KEY         NOT NULL,
+		ProductName     VARCHAR(24) NOT NULL,
+		Description     TEXT,
+		Amount          INT
+	);
+
+INSERT INTO Coupon (ProductName, Description, Amount) VALUES ('IPhone X', 'IPhone Discount', 150);
+
+INSERT INTO Coupon (ProductName, Description, Amount) VALUES ('Samsung 10', 'Samsung Discount', 100);
+
+SELECT * FROM public.coupon
+		ORDER BY id ASC
+
+install-package Npgsql
+install-package Dapper
+
+
+Discount Grpc
